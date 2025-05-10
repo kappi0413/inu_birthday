@@ -1,0 +1,30 @@
+/* style.css */
+
+body {
+    background-color: #000;         /* 黒背景 */
+    color: #ffeb3b;                 /* 黄色テキスト */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #ffeb3b;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #fdd835;
+  }
+  
