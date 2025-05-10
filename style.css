@@ -27,4 +27,12 @@ body {
   button:hover {
     background-color: #fdd835;
   }
-  
+  .message {
+  background-color: #222;
+  color: #ffeb3b;
+  padding: 16px;
+  margin: 10px auto;
+  width: 80%;
+  border-radius: 12px;
+  font-size: 1.2em;
+}

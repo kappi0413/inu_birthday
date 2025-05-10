@@ -1,0 +1,32 @@
+<!-- question1.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>第一の謎</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>第一の謎</h1>
+  <p>或世イヌが初配信したのは何月？</p>
+
+  <input type="text" id="answer" placeholder="例：4月">
+  <br><br>
+  <button onclick="checkAnswer()">答える</button>
+
+  <p id="feedback" style="color: red;"></p>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const correct = "4月"; // ★正解をここに設定！
+
+      if (input === correct) {
+        window.location.href = "question2.html"; // 次のページへ
+      } else {
+        document.getElementById("feedback").textContent = "ちがうよ！もう一度考えてみて！";
+      }
+    }
+  </script>
+</body>
+</html>
