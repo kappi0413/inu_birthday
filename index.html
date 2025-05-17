@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <link rel="stylesheet" href="style.css">
-
 <head>
   <meta charset="UTF-8">
   <title>或世イヌ 誕生日サイト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>ハッピーバースデー</h1>
-  <p>STARTボタンを押して</p>
-  <button>START</button>
+  <div class="container">
+    <h1>ハッピーバースデー 或世イヌ！</h1>
+    <p>STARTボタンを押して、謎解きをはじめよう!</p>
+    <button onclick="location.href='question1.html'">START</button>
+
+    <!-- SNS共有ボタン -->
+    <button id="shareBtn">📣 Xでシェアして始めよう！</button>
+  </div>
+
+  <script>
+    document.getElementById("shareBtn").addEventListener("click", function () {
+      const text = "或世イヌの誕生日謎解き、これから挑戦してみる！✨\n#或世イヌ誕生日";
+      const url = encodeURIComponent(window.location.href);
+      const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`;
+      window.open(shareUrl, "_blank");
+    });
+  </script>
+
+  <button id="startButton">START</button>
+
+  <div id="fadeout-overlay"></div>
+
 </body>
 </html>
