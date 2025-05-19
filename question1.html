@@ -3,30 +3,37 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>第一の謎</title>
+  <title>謎1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>第一の謎</h1>
-  <p>或世イヌが初配信したのは何月？</p>
 
-  <input type="text" id="answer" placeholder="例：4月">
-  <br><br>
-  <button onclick="checkAnswer()">答える</button>
+<h1>謎を解いてください！</h1>
+<p>Q1: 或世イヌの好きな食べ物は？</p>
+<input type="text" id="answerInput" placeholder="ここに入力">
+<button onclick="checkAnswer()">答える</button>
 
-  <p id="feedback" style="color: red;"></p>
+<!-- エフェクト表示用 -->
+<div id="confetti" class="hidden">🎉 正解！ 🎉</div>
 
-  <script>
-    function checkAnswer() {
-      const input = document.getElementById("answer").value.trim();
-      const correct = "4月"; // ★正解をここに設定！
+<script>
+  function checkAnswer() {
+    const answer = document.getElementById("answerInput").value.trim();
+    if (answer === "ポテト") {
+      // 正解時：エフェクト表示
+      const confetti = document.getElementById("confetti");
+      confetti.classList.remove("hidden");
+      confetti.classList.add("show");
 
-      if (input === correct) {
-        window.location.href = "question2.html"; // 次のページへ
-      } else {
-        document.getElementById("feedback").textContent = "ちがうよ！もう一度考えてみて！";
-      }
+      // 1.5秒後に次のページへ移動
+      setTimeout(() => {
+        window.location.href = "question2.html";
+      }, 1500);
+    } else {
+      alert("違うよ！もう一度考えてみよう！");
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
