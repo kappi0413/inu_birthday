@@ -2,24 +2,46 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>第1問</title>
+  <title>第2問</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>第1問</h1>
-  <p>或世イヌの初配信日はいつ？</p>
+  <h1>第2問</h1>
+  <p>APEX】視聴者参加型で1ダメ1カロリーAPEXする【或世イヌ/Neo-Porte】にて、初日の朝ごはんのカロリーは以下のどれに決まったか</p>
 
   <div class="choices">
-    <button class="choice" data-correct="false">2021年5月1日</button>
-    <button class="choice" data-correct="true">2022年3月19日</button>
-    <button class="choice" data-correct="false">2023年1月1日</button>
-    <button class="choice" data-correct="false">2022年12月25日</button>
+    <button class="choice" data-correct="false">2000カロリー</button>
+    <button class="choice" data-correct="true">2020カロリー</button>
+    <button class="choice" data-correct="false">2200カロリー</button>
+    <button class="choice" data-correct="false">2220カロリー</button>
   </div>
 
   <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
   <div id="fadeout-overlay"></div>
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll(".choice").forEach(button => {
+      button.addEventListener("click", () => {
+        const correct = button.getAttribute("data-correct") === "true";
+        const feedback = document.getElementById("feedback");
+
+        if (correct) {
+          feedback.textContent = "正解です！次の問題へ進みます。";
+          feedback.classList.remove("hidden");
+
+          const overlay = document.getElementById("fadeout-overlay");
+          overlay.classList.add("active");
+
+          setTimeout(() => {
+            window.location.href = "question3.html"; // 次の問題へ
+          }, 800);
+        } else {
+          feedback.textContent = "不正解です。もう一度選んでね。";
+          feedback.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!-- question1.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>第3門</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>第３問</h1>
+  <p>神域リーグ2023第一節第三試合にて、初めて或世が放銃した牌は何か</p>
+
+  <input type="text" id="answer" placeholder="例：三萬">
+  <br><br>
+  <button onclick="checkAnswer()">答える</button>
+
+  <p id="feedback" style="color: red;"></p>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const correct = "五萬"; // ★正解をここに設定！
+
+      if (input === correct) {
+        window.location.href = "question2.html"; // 次のページへ
+      } else {
+        document.getElementById("feedback").textContent = "ちがうよ！もう一度考えてみて！";
+      }
+    }
+  </script>
+</body>
+</html>

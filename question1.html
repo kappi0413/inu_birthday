@@ -1,39 +1,47 @@
-<!-- question1.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>謎1</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>第1問</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <h1>第1問</h1>
+  <p>或世イヌの初配信日はいつ？</p>
 
-<h1>謎を解いてください！</h1>
-<p>Q1: 或世イヌの好きなケーキは？</p>
-<input type="text" id="answerInput" placeholder="ここに入力">
-<button onclick="checkAnswer()">答える</button>
+  <div class="choices">
+    <button class="choice" data-correct="false">2021年3月23日</button>
+    <button class="choice" data-correct="false">2022年3月19日</button>
+    <button class="choice" data-correct="true"> 2022年3月21日</button>
+    <button class="choice" data-correct="false">2022年3月23日</button>
+  </div>
 
-<!-- エフェクト表示用 -->
-<div id="confetti" class="hidden">🎉 正解！ 🎉</div>
+  <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
+  <div id="fadeout-overlay"></div>
 
-<script>
-  function checkAnswer() {
-    const answer = document.getElementById("answerInput").value.trim();
-    if (answer === "イチゴタルト") {
-      // 正解時：エフェクト表示
-      const confetti = document.getElementById("confetti");
-      confetti.classList.remove("hidden");
-      confetti.classList.add("show");
+  <script>
+    document.querySelectorAll(".choice").forEach(button => {
+      button.addEventListener("click", () => {
+        const correct = button.getAttribute("data-correct") === "true";
+        const feedback = document.getElementById("feedback");
 
-      // 1.5秒後に次のページへ移動
-      setTimeout(() => {
-        window.location.href = "question2.html";
-      }, 1500);
-    } else {
-      alert("違うよ！もう一度考えてみよう！");
-    }
-  }
-</script>
+        if (correct) {
+          feedback.textContent = "正解です！次の問題へ進みます。";
+          feedback.classList.remove("hidden");
 
+          const overlay = document.getElementById("fadeout-overlay");
+          overlay.classList.add("active");
+
+          setTimeout(() => {
+            window.location.href = "question2.html"; // 次の問題へ
+          }, 800);
+        } else {
+          feedback.textContent = "不正解です。もう一度選んでね。";
+          feedback.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
 </body>
 </html>

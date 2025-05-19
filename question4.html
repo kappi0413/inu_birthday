@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>第4問</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>~第4問~</h1>
+  <p>【APEX】V最協本番!ずっと努力してきたんだ/#BATMWIN【或世イヌ/Neo-Porte】内にて、最終試合勝利した際に或世が持っていた武器は何か</p>
+
+  <div class="choices">
+    <button class="choice" data-id="r99">R99</button>
+    <button class="choice" data-id="mastiff">マスティフ</button>
+    <button class="choice" data-id="sentinel">センチネル</button>
+    <button class="choice" data-id="peacekeeper">ピースキーパー</button>
+  </div>
+
+  <div id="feedback" class="hidden"></div>
+  <div id="fadeout-overlay"></div>
+
+  <script>
+    let correctAnswers = {
+      r99: false,
+      peacekeeper: false,
+    };
+
+    document.querySelectorAll(".choice").forEach(button => {
+      button.addEventListener("click", () => {
+        const id = button.getAttribute("data-id");
+        const feedback = document.getElementById("feedback");
+
+        if (id === "r99" || id === "peacekeeper") {
+          if (!correctAnswers[id]) {
+            correctAnswers[id] = true;
+            feedback.textContent = `「${button.textContent}」 正解！`;
+            feedback.className = "feedback-correct";
+            feedback.classList.remove("hidden");
+          } else {
+            feedback.textContent = `「${button.textContent}」 はもう選ばれています。`;
+            feedback.className = "feedback-warn";
+            feedback.classList.remove("hidden");
+          }
+
+          // 両方正解していたら次のページへ
+          if (correctAnswers.r99 && correctAnswers.peacekeeper) {
+            const overlay = document.getElementById("fadeout-overlay");
+            overlay.classList.add("active");
+
+            setTimeout(() => {
+              window.location.href = "finale.html"; // 寄せ書きページへ
+            }, 800);
+          }
+        } else {
+          // ✨不正解ならリセット
+          correctAnswers.r99 = false;
+          correctAnswers.peacekeeper = false;
+
+          feedback.textContent = `「${button.textContent}」 は不正解！！正解リセット！`;
+          feedback.className = "feedback-wrong";
+          feedback.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

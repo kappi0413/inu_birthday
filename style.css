@@ -1,8 +1,8 @@
 /* style.css */
 
 body {
-  background-color: #1f1c1cb7;         /* 黒背景 */
-  color: #ffeb3b;                 /* 黄色テキスト */
+  background-color: #1f1c1cb7;
+  color: #ffeb3b;
   font-family: 'Arial', sans-serif;
   text-align: center;
   padding: 50px;
@@ -30,7 +30,7 @@ p {
   animation: fadeIn 1.5s ease-out;
 }
 
-button {
+button, .choice {
   background-color: #ffeb3b;
   color: #000;
   border: none;
@@ -42,7 +42,7 @@ button {
   margin: 10px;
 }
 
-button:hover {
+button:hover, .choice:hover {
   background-color: #fdd835;
   transform: scale(1.05);
 }
@@ -93,6 +93,58 @@ button:hover {
   opacity: 1;
 }
 
+#fadeout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+  z-index: 9999;
+}
+
+#fadeout-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#feedback {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.feedback-correct {
+  color: #ffeb3b;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.feedback-wrong {
+  color: red;
+  background-color: #111;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.feedback-warn {
+  color: orange;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 8px;
+}
+
 .hidden {
   display: none;
 }
@@ -134,56 +186,4 @@ button:hover {
   .container {
     padding: 10px;
   }
-}
-
-
-#fadeout-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.8s ease;
-  z-index: 9999;
-}
-
-#fadeout-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.choices {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.choice {
-  padding: 12px 20px;
-  font-size: 1.1em;
-  border: none;
-  background-color: #ffeb3b;
-  color: #000;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.choice:hover {
-  background-color: #fdd835;
-}
-
-#feedback {
-  margin-top: 20px;
-  color: #ffeb3b;
-  font-weight: bold;
-}
-
-.hidden {
-  display: none;
 }
