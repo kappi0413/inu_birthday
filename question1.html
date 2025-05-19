@@ -9,7 +9,7 @@
 <body>
 
 <h1>謎を解いてください！</h1>
-<p>Q1: 或世イヌの好きな食べ物は？</p>
+<p>Q1: 或世イヌの好きなケーキは？</p>
 <input type="text" id="answerInput" placeholder="ここに入力">
 <button onclick="checkAnswer()">答える</button>
 
@@ -19,7 +19,7 @@
 <script>
   function checkAnswer() {
     const answer = document.getElementById("answerInput").value.trim();
-    if (answer === "ポテト") {
+    if (answer === "イチゴタルト") {
       // 正解時：エフェクト表示
       const confetti = document.getElementById("confetti");
       confetti.classList.remove("hidden");

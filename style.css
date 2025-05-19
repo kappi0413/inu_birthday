@@ -155,3 +155,35 @@ button:hover {
   pointer-events: auto;
 }
 
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.choice {
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border: none;
+  background-color: #ffeb3b;
+  color: #000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.choice:hover {
+  background-color: #fdd835;
+}
+
+#feedback {
+  margin-top: 20px;
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
