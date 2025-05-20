@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>寄せ書き削除ページ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🗑️ 寄せ書き削除ページ</h1>
+    <p>個別またはすべての寄せ書きを削除できます。</p>
+
+    <div id="messagesList"></div>
+
+    <button id="clearAllBtn">⚠️ 全削除</button>
+  </div>
+
+  <script>
+    // メッセージ表示用
+    function loadMessages() {
+      const listContainer = document.getElementById("messagesList");
+      listContainer.innerHTML = "";
+
+      const messages = JSON.parse(localStorage.getItem("userMessages")) || [];
+
+      if (messages.length === 0) {
+        listContainer.innerHTML = "<p>削除できる寄せ書きがありません。</p>";
+        return;
+      }
+
+      messages.forEach((msg, index) => {
+        const div = document.createElement("div");
+        div.className = "message";
+        div.innerHTML = `
+          📝 <strong>${msg.name}</strong>：${msg.text}
+          <button onclick="deleteMessage(${index})">削除</button>
+        `;
+        listContainer.appendChild(div);
+      });
+    }
+
+    // 個別削除
+    function deleteMessage(index) {
+      const messages = JSON.parse(localStorage.getItem("userMessages")) || [];
+      messages.splice(index, 1);
+      localStorage.setItem("userMessages", JSON.stringify(messages));
+      loadMessages();
+    }
+
+    // 全削除
+    document.getElementById("clearAllBtn").addEventListener("click", () => {
+      if (confirm("すべての寄せ書きを削除しますか？")) {
+        localStorage.removeItem("userMessages");
+        loadMessages();
+      }
+    });
+
+    // 初期表示
+    loadMessages();
+  </script>
+</body>
+</html>
