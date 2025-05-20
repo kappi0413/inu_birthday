@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>第5問</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>第5問</h1>
+  <p>2023/03/18配信【企画】嫌いな食べ物を当てろ！食わず嫌い王決定戦！！！【或世イヌ/Neo-Porte】にて、或世が嫌いなものはどれか？</p>
+
+  <div class="choices">
+    <button class="choice" data-correct="false">担々麺</button>
+    <button class="choice" data-correct="false">納豆巻き</button>
+    <button class="choice" data-correct="false">サンドイッチ(玉子チキン野菜)</button>
+    <button class="choice" data-correct="true">プリン</button>
+  </div>
+
+  <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
+  <div id="fadeout-overlay"></div>
+
+  <script>
+    document.querySelectorAll(".choice").forEach(button => {
+      button.addEventListener("click", () => {
+        const correct = button.getAttribute("data-correct") === "true";
+        const feedback = document.getElementById("feedback");
+
+        if (correct) {
+          feedback.textContent = "正解です！次の問題へ進みます。";
+          feedback.classList.remove("hidden");
+
+          const overlay = document.getElementById("fadeout-overlay");
+          overlay.classList.add("active");
+
+          setTimeout(() => {
+            window.location.href = "finale.html"; // 次の問題へ
+          }, 800);
+        } else {
+          feedback.textContent = "不正解です。もう一度選んでね。";
+          feedback.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
