@@ -1,30 +1,60 @@
-<!-- question1.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>第3門</title>
+  <title>第3問</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>第３問</h1>
-  <p>神域リーグ2023第一節第三試合にて、初めて或世が放銃した牌は何か</p>
+  <div class="container">
+    <h1>第３問</h1>
+    <p>神域リーグ2023第一節第三試合にて、初めて或世が放銃した牌は何か？</p>
 
-  <input type="text" id="answer" placeholder="例：三萬">
-  <br><br>
-  <button onclick="checkAnswer()">答える</button>
+    <div style="margin: 20px 0;">
+      <label>数字を選んでね：</label>
+      <select id="numberSelect">
+        <option value="">--選択--</option>
+        <option value="一">一</option>
+        <option value="二">二</option>
+        <option value="三">三</option>
+        <option value="四">四</option>
+        <option value="五">五</option>
+        <option value="六">六</option>
+        <option value="七">七</option>
+        <option value="八">八</option>
+        <option value="九">九</option>
+      </select>
+    </div>
 
-  <p id="feedback" style="color: red;"></p>
+    <div>
+      <label>種類を選んでね：</label>
+      <select id="typeSelect">
+        <option value="">--選択--</option>
+        <option value="萬">萬</option>
+        <option value="筒">筒</option>
+        <option value="索">索</option>
+        <option value="字">字牌</option>
+      </select>
+    </div>
+
+    <br>
+    <button onclick="checkAnswer()">答える</button>
+
+    <p id="feedback" style="color: red;"></p>
+  </div>
 
   <script>
     function checkAnswer() {
-      const input = document.getElementById("answer").value.trim();
-      const correct = "五萬"; // ★正解をここに設定！
+      const num = document.getElementById("numberSelect").value;
+      const type = document.getElementById("typeSelect").value;
+      const feedback = document.getElementById("feedback");
 
-      if (input === correct) {
-        window.location.href = "question4.html"; // 次のページへ
+      if (num === "五" && type === "萬") {
+        window.location.href = "question4.html";
+      } else if (!num || !type) {
+        feedback.textContent = "両方選んでね！";
       } else {
-        document.getElementById("feedback").textContent = "ちがうよ！もう一度考えてみて！";
+        feedback.textContent = "ちがうよ！もう一度考えてみて！";
       }
     }
   </script>
