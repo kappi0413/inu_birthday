@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>第3問</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -40,8 +41,10 @@
     <br>
     <button onclick="checkAnswer()">答える</button>
 
-    <p id="feedback" style="color: red;"></p>
+    <p id="feedback" class="hidden"></p>
   </div>
+
+  <div id="fadeout-overlay"></div>
 
   <script>
     function checkAnswer() {
@@ -49,12 +52,28 @@
       const type = document.getElementById("typeSelect").value;
       const feedback = document.getElementById("feedback");
 
-      if (num === "五" && type === "萬") {
-        window.location.href = "question4.html";
-      } else if (!num || !type) {
+      if (!num || !type) {
         feedback.textContent = "両方選んでね！";
+        feedback.className = "feedback-wrong";
+        feedback.classList.remove("hidden");
+        return;
+      }
+
+      if (num === "五" && type === "萬") {
+        feedback.textContent = "正解です！次の問題へ進みます。";
+        feedback.className = "feedback-correct";
+        feedback.classList.remove("hidden");
+
+        const overlay = document.getElementById("fadeout-overlay");
+        overlay.classList.add("active");
+
+        setTimeout(() => {
+          window.location.href = "question4.html";
+        }, 800);
       } else {
         feedback.textContent = "ちがうよ！もう一度考えてみて！";
+        feedback.className = "feedback-wrong";
+        feedback.classList.remove("hidden");
       }
     }
   </script>
