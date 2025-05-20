@@ -17,50 +17,46 @@
       <div class="message">💛 最後まで解いたあなたも最高！</div>
     </div>
 
-    <!-- 寄せ書きフォーム（名前＋メッセージ） -->
+    <!-- 寄せ書きフォーム -->
     <form id="messageForm">
-      <input type="text" id="userName" placeholder="名前（匿名OK）" required>
       <input type="text" id="newMessage" placeholder="メッセージを書く" required>
       <button type="submit">送信</button>
     </form>
   </div>
 
   <script>
-    // 保存されているメッセージを表示
+    // ローカルストレージから読み込み
     window.addEventListener("DOMContentLoaded", () => {
       const savedMessages = JSON.parse(localStorage.getItem("userMessages")) || [];
       const messagesContainer = document.getElementById("messages");
-      savedMessages.forEach(({ name, text }) => {
+      savedMessages.forEach(msg => {
         const div = document.createElement("div");
         div.className = "message";
-        div.textContent = `📝 ${name}：${text}`;
+        div.textContent = msg;
         messagesContainer.appendChild(div);
       });
     });
 
-    // フォーム送信処理
+    // メッセージ送信処理
     document.getElementById("messageForm").addEventListener("submit", function (e) {
       e.preventDefault();
-      const name = document.getElementById("userName").value.trim() || "匿名";
-      const messageText = document.getElementById("newMessage").value.trim();
+      const input = document.getElementById("newMessage");
+      const messageText = input.value.trim();
       if (!messageText) return;
-
-      const newMessage = { name, text: messageText };
 
       // 表示に追加
       const messageDiv = document.createElement("div");
       messageDiv.className = "message";
-      messageDiv.textContent = `📝 ${newMessage.name}：${newMessage.text}`;
+      messageDiv.textContent = messageText;
       document.getElementById("messages").appendChild(messageDiv);
 
-      // ローカルストレージに保存
+      // 保存に追加
       const saved = JSON.parse(localStorage.getItem("userMessages")) || [];
-      saved.push(newMessage);
+      saved.push(messageText);
       localStorage.setItem("userMessages", JSON.stringify(saved));
 
-      // フォームを空にする
-      document.getElementById("userName").value = "";
-      document.getElementById("newMessage").value = "";
+      // フォームを空に
+      input.value = "";
     });
   </script>
 </body>
