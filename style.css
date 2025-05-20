@@ -187,8 +187,14 @@ button:hover, .choice:hover {
     padding: 10px;
   }
 }
+
+
 form {
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 input[type="text"] {
@@ -196,13 +202,12 @@ input[type="text"] {
   font-size: 1em;
   border-radius: 8px;
   border: none;
-  width: 60%;
+  width: 80%;
   max-width: 400px;
 }
 
 button[type="submit"] {
   padding: 10px 20px;
-  margin-left: 10px;
   font-size: 1em;
   border: none;
   border-radius: 8px;
