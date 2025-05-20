@@ -16,48 +16,9 @@
       <div class="message">🖤 これからもずっと応援してるよ！</div>
       <div class="message">💛 最後まで解いたあなたも最高！</div>
     </div>
-
-    <!-- 寄せ書きフォーム -->
-    <form id="messageForm">
-      <input type="text" id="newMessage" placeholder="メッセージを書く" required>
-      <button type="submit">送信</button>
-    </form>
+    <!-- SNS共有ボタン -->
+    <button id="shareBtn">📣 Xでシェアして始めよう</button>
   </div>
-
-  <script>
-    // ローカルストレージから読み込み
-    window.addEventListener("DOMContentLoaded", () => {
-      const savedMessages = JSON.parse(localStorage.getItem("userMessages")) || [];
-      const messagesContainer = document.getElementById("messages");
-      savedMessages.forEach(msg => {
-        const div = document.createElement("div");
-        div.className = "message";
-        div.textContent = msg;
-        messagesContainer.appendChild(div);
-      });
-    });
-
-    // メッセージ送信処理
-    document.getElementById("messageForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const input = document.getElementById("newMessage");
-      const messageText = input.value.trim();
-      if (!messageText) return;
-
-      // 表示に追加
-      const messageDiv = document.createElement("div");
-      messageDiv.className = "message";
-      messageDiv.textContent = messageText;
-      document.getElementById("messages").appendChild(messageDiv);
-
-      // 保存に追加
-      const saved = JSON.parse(localStorage.getItem("userMessages")) || [];
-      saved.push(messageText);
-      localStorage.setItem("userMessages", JSON.stringify(saved));
-
-      // フォームを空に
-      input.value = "";
-    });
   </script>
 </body>
 </html>
