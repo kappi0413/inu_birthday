@@ -124,7 +124,6 @@ button:hover, .choice:hover {
   font-weight: bold;
 }
 
-/* フィードバック表示スタイル */
 .feedback-correct {
   color: #ffeb3b;
   background-color: #222;
@@ -150,7 +149,6 @@ button:hover, .choice:hover {
   display: none;
 }
 
-/* アニメーション */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -171,7 +169,6 @@ button:hover, .choice:hover {
   }
 }
 
-/* レスポンシブ対応 */
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 2em;
@@ -191,7 +188,6 @@ button:hover, .choice:hover {
   }
 }
 
-/* フォームスタイル */
 form {
   margin-top: 30px;
 }
@@ -219,4 +215,12 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #fdd835;
+}
+
+/* ▼▼▼ ここが今回追加したスタイル ▼▼▼ */
+.bottom-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-top: 30px;
 }
