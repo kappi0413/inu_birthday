@@ -1,5 +1,6 @@
 /* style.css */
 
+/* 基本スタイル */
 body {
   background-color: #1f1c1cb7;
   color: #ffeb3b;
@@ -217,10 +218,34 @@ button[type="submit"]:hover {
   background-color: #fdd835;
 }
 
-/* ▼▼▼ ここが今回追加したスタイル ▼▼▼ */
+/* 追加したスタイル */
 .bottom-image {
   width: 100%;
   max-width: 500px;
   height: auto;
   margin-top: 30px;
+}
+
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.left-image {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.intro-text {
+  max-width: 500px;
+  color: #ffeb3b;
+  font-size: 1.1em;
+  line-height: 1.6;
 }

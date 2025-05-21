@@ -2,28 +2,125 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>或世イヌ 誕生日サイト</title>
+  <title>或世イヌ 誕生日記念サイト</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <style>
-    .bottom-image {
-      width: 200px;
+    body {
+      background-color: black;
+      color: #ffffcc;
+      font-family: "ＭＳ Ｐゴシック", sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 28px;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      border: 2px dashed #ffeb3b;
+      padding: 20px;
+      background-color: #111;
+    }
+
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
       margin-top: 40px;
-      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .intro-text {
+      max-width: 500px;
+      color: #00ffff;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .bottom-image {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      border-radius: 12px;
+      border: 2px solid #ffeb3b;
+    }
+
+    a {
+      color: #00ffff;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #222;
+      color: #ffeb3b;
+      border: 2px solid #ffeb3b;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    .counter {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .intro-section {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+      .intro-text {
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>ハッピーバースデー 或世イヌ！</h1>
-    <p>STARTボタンを押して、謎解きをはじめよう!</p>
+    <h1>★☆ ハッピーバースデー 或世イヌ ☆★</h1>
+    <p>さぁ或世イヌに関するこの問題を解くことができるかな！？</p>
     <button onclick="location.href='question1.html'">START</button>
-    
 
-    <!-- 画像を追加 -->
-    <img src="aruse_inu_kao.webp" alt="或世イヌ" class="bottom-image">
+    <!-- アクセスカウンター風 -->
+    <div class="counter">
+      <p>あなたは<span style="color: #00ff00;">000042</span>人目のお客様です！</p>
+      <img src="https://www.f-counter.net/j/01/0000000.gif" alt="カウンター">
+      <p><a href="#">キリ番報告はこちら！（掲示板風リンク）</a></p>
+    </div>
 
-    <div id="fadeout-overlay"></div>
+    <h2 style="color: #ffeb3b;">或世イヌってどんな人？</h2>
+    <div class="intro-section">
+      <img src="aruse_inu_kao.webp" alt="或世イヌ" class="bottom-image">
+      <div class="intro-text">
+        <p>身長：175cm<br>誕生日：5月28日<br>年齢：???</p>
+        <p>
+          表の顔はブラック企業に勤める新卒1年目。<br>
+          あまりの辛さから抜け出すために、仕方なく家業の怪盗を継ぐ。<br>
+          配信を始めた理由は「怪盗が配信したらバズりそう」という安直なもの。<br>
+          いち早く会社を辞めるためにお金を稼ぐ企画を必死に考えている。
+        </p>
+      </div>
+    </div>
+
+    <p style="margin-top: 40px; font-size: 0.9em; color: #ccc;">
+      素材：<a href="#">レトロ素材屋リンク</a> ／ BGM：<a href="#">MIDI再生中（準備中）</a>
+    </p>
   </div>
 </body>
 </html>
