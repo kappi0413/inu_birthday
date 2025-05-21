@@ -249,3 +249,87 @@ button[type="submit"]:hover {
   font-size: 1.1em;
   line-height: 1.6;
 }
+ body {
+      background-color: black;
+      color: #ffffcc;
+      font-family: "ＭＳ Ｐゴシック", sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 28px;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      border: 2px dashed #ffeb3b;
+      padding: 20px;
+      background-color: #111;
+    }
+
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .intro-text {
+      max-width: 500px;
+      color: #00ffff;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .bottom-image {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      border-radius: 12px;
+      border: 2px solid #ffeb3b;
+    }
+
+    a {
+      color: #00ffff;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #222;
+      color: #ffeb3b;
+      border: 2px solid #ffeb3b;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    .counter {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .intro-section {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+      .intro-text {
+        text-align: center;
+      }
+    }
