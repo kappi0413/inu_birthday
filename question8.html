@@ -2,19 +2,22 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>第5問</title>
+  <title>第8問</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>第5問</h1>
-  <p>2023/03/18配信【企画】嫌いな食べ物を当てろ！食わず嫌い王決定戦！！！【或世イヌ/Neo-Porte】にて、或世が嫌いなものはどれか？</p>
+  <h1>第8問</h1>
+  <p>企画屋・或世イヌが過去に沢山やった企画のなかで、やってない企画はどれだ！？</p>
 
   <div class="choices">
-    <button class="choice" data-correct="false">担々麺</button>
-    <button class="choice" data-correct="false">納豆巻き</button>
-    <button class="choice" data-correct="false">サンドイッチ(玉子チキン野菜)</button>
-    <button class="choice" data-correct="true">プリン</button>
+    <button class="choice" data-correct="false">ウミガメのスープ</button>
+    <button class="choice" data-correct="false">ファッションチェック</button>
+    <button class="choice" data-correct="false">日本ダービー予想会</button>
+    <button class="choice" data-correct="true">嘘企画</button>
+    <button class="choice" data-correct="false">スイカゲーム大会</button>
+    <button class="choice" data-correct="false">ビビり王決定戦</button>
+    <button class="choice" data-correct="false">食わす嫌い王決定戦</button>
   </div>
 
   <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
@@ -34,7 +37,7 @@
           overlay.classList.add("active");
 
           setTimeout(() => {
-            window.location.href = "question6.html";
+            window.location.href = "finale.html";
           }, 800);
         } else {
           feedback.textContent = "不正解です。もう一度選んでね。";
