@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!--第六問-->
   <h1>第6問</h1>
   <p>2022/12/28配信【電話凸】先輩VTuberと通話して指定された食べ物しか食べられない生活【或世イヌ/Neo-Porte】内にて、ローレンに指定された食べ物は以下のどれか</p>
 
@@ -14,12 +16,13 @@
     <button class="choice" data-correct="false">ベースブレッド</button>
     <button class="choice" data-correct="false">緑の野菜</button>
     <button class="choice" data-correct="false">激辛チリトマトヌードル</button>
-    <button class="choice" data-correct="true">ゆで卵</button>
+    <button class="choice" data-correct="true">ゆで卵</button><!--正解-->
   </div>
 
   <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
   <div id="fadeout-overlay"></div>
 
+  <!-- 成否判定 -->
   <script>
     document.querySelectorAll(".choice").forEach(button => {
       button.addEventListener("click", () => {

@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!--第八問-->
   <h1>第8問</h1>
   <p>企画屋・或世イヌが過去に沢山やった企画のなかで、やってない企画はどれだ！？</p>
 
@@ -14,7 +16,7 @@
     <button class="choice" data-correct="false">ウミガメのスープ</button>
     <button class="choice" data-correct="false">ファッションチェック</button>
     <button class="choice" data-correct="false">日本ダービー予想会</button>
-    <button class="choice" data-correct="true">激辛食材耐久チャレンジ</button>
+    <button class="choice" data-correct="true">激辛食材耐久チャレンジ</button><!--正解-->
     <button class="choice" data-correct="false">スイカゲーム大会</button>
     <button class="choice" data-correct="false">ビビり王決定戦</button>
     <button class="choice" data-correct="false">食わす嫌い王決定戦</button>
@@ -23,6 +25,7 @@
   <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
   <div id="fadeout-overlay"></div>
 
+  <!-- 成否判定 -->
   <script>
     document.querySelectorAll(".choice").forEach(button => {
       button.addEventListener("click", () => {

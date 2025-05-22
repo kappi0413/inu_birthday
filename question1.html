@@ -6,20 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- 第一問 -->
   <h1>第1問</h1>
   <p>或世イヌの初配信日はいつ？</p>
 
   <div class="choices">
     <button class="choice" data-correct="false">2021年3月23日</button>
     <button class="choice" data-correct="false">2022年3月19日</button>
-    <button class="choice" data-correct="true"> 2022年3月21日</button>
+    <button class="choice" data-correct="true"> 2022年3月21日</button><!--正解-->
     <button class="choice" data-correct="false">2022年3月23日</button>
   </div>
 
   <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
   <div id="fadeout-overlay"></div>
 
+  <!--成否判定を行う-->
   <script>
     document.querySelectorAll(".choice").forEach(button => {
       button.addEventListener("click", () => {

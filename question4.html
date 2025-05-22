@@ -6,21 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!--第四問-->
   <h1>第4問</h1>
   <p>  2022/04/17の配信【APEX】V最協本番!ずっと努力してきたんだ/#BATMWIN【或世イヌ/Neo-Porte】内にて、最終試合勝利した際に或世が持っていた武器は何か</p>
   <p>二つ選択してね</p>
 
   <div class="choices">
-    <button class="choice" data-id="r99">R99</button>
+    <button class="choice" data-id="r99">R99</button><!--正解-->
     <button class="choice" data-id="mastiff">マスティフ</button>
     <button class="choice" data-id="sentinel">センチネル</button>
-    <button class="choice" data-id="peacekeeper">ピースキーパー</button>
+    <button class="choice" data-id="peacekeeper">ピースキーパー</button><!--正解-->
   </div>
 
   <div id="feedback" class="hidden"></div>
   <div id="fadeout-overlay"></div>
 
+  <!-- 成否判定 -->
   <script>
     let correctAnswers = {
       r99: false,
@@ -54,7 +57,7 @@
             }, 800);
           }
         } else {
-          // ✨不正解ならリセット
+          //不正解ならリセット
           correctAnswers.r99 = false;
           correctAnswers.peacekeeper = false;
 

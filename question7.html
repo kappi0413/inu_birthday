@@ -6,14 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!--第七問-->
   <h1>第7問</h1>
   <p>
     ローレン・イロアス、英リサ、或世イヌ。この三人のグループ名は？
   </p>
   <div class="choices">
     <button class="choice" data-correct="false">わくわくモンチッチ</button>
-    <button class="choice" data-correct="true">3ks</button>
+    <button class="choice" data-correct="true">3ks</button><!--正解-->
     <button class="choice" data-correct="false">サブキャラ</button>
     <button class="choice" data-correct="false">YNM</button>
     <button class="choice" data-correct="false">ほんまかいな</button>
@@ -23,6 +25,7 @@
   <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
   <div id="fadeout-overlay"></div>
 
+  <!-- 成否判定 -->
   <script>
     document.querySelectorAll(".choice").forEach(button => {
       button.addEventListener("click", () => {
