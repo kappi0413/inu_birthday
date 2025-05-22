@@ -10,7 +10,7 @@ if (startBtn) {
   });
 }
 
-// SNS共有ボタン
+// SNS共有ボタン（final.htmlなどで使用）
 const shareBtn = document.getElementById("shareBtn");
 if (shareBtn) {
   shareBtn.addEventListener("click", () => {
@@ -39,7 +39,7 @@ if (answerInput) {
   });
 }
 
-// Q2〜Q3：選択式（1問正解）
+// Q2〜Q3：選択式（button.choice + data-correct）
 document.querySelectorAll(".choice").forEach(button => {
   button.addEventListener("click", () => {
     const correct = button.getAttribute("data-correct") === "true";
@@ -69,7 +69,70 @@ document.querySelectorAll(".choice").forEach(button => {
   });
 });
 
-// Q4：2つ正解で通過
+// Q3：種類によって数字の選択肢を変える
+const typeSelect = document.getElementById("typeSelect");
+if (typeSelect) {
+  typeSelect.addEventListener("change", () => {
+    const numberSelect = document.getElementById("numberSelect");
+    numberSelect.innerHTML = "";
+
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "--選択--";
+    numberSelect.appendChild(defaultOption);
+
+    const type = typeSelect.value;
+    let options = [];
+
+    if (type === "字") {
+      options = ["東", "南", "西", "北", "白", "發", "中"];
+    } else if (type === "萬" || type === "筒" || type === "索") {
+      options = ["一", "二", "三", "四", "五", "六", "七", "八", "九"];
+    }
+
+    options.forEach(val => {
+      const option = document.createElement("option");
+      option.value = val;
+      option.textContent = val;
+      numberSelect.appendChild(option);
+    });
+  });
+
+  const q3AnswerBtn = document.getElementById("q3AnswerBtn");
+  if (q3AnswerBtn) {
+    q3AnswerBtn.addEventListener("click", () => {
+      const num = document.getElementById("numberSelect").value;
+      const type = document.getElementById("typeSelect").value;
+      const feedback = document.getElementById("feedback");
+
+      if (!num || !type) {
+        feedback.textContent = "両方選んでね！";
+        feedback.className = "feedback-wrong";
+        feedback.classList.remove("hidden");
+        return;
+      }
+
+      if (num === "五" && type === "萬") {
+        feedback.textContent = "正解です！次の問題へ進みます。";
+        feedback.className = "feedback-correct";
+        feedback.classList.remove("hidden");
+
+        const overlay = document.getElementById("fadeout-overlay");
+        overlay?.classList.add("active");
+
+        setTimeout(() => {
+          window.location.href = "question4.html";
+        }, 800);
+      } else {
+        feedback.textContent = "ちがうよ！もう一度考えてみて！";
+        feedback.className = "feedback-wrong";
+        feedback.classList.remove("hidden");
+      }
+    });
+  }
+}
+
+// Q4：2つ正解で通過（data-id使用）
 const isQ4 = document.querySelector('[data-id]');
 if (isQ4) {
   let correctAnswers = {
@@ -101,7 +164,6 @@ if (isQ4) {
           }, 800);
         }
       } else {
-        // 不正解：リセット
         correctAnswers = { r99: false, peacekeeper: false };
         feedback.textContent = `「${button.textContent}」 は不正解！！正解リセット！`;
         feedback.className = "feedback-wrong";
