@@ -2,7 +2,7 @@
 body {
   background-color: #000;
   color: #ffffcc;
-  font-family: "ＭＳ Ｐゴシック", 'Arial', sans-serif;
+  font-family: "MS PGothic","ＭＳ Ｐゴシック", 'Arial', sans-serif;
   text-align: center;
   padding: 50px;
   margin: 0;
@@ -276,5 +276,18 @@ a {
 
   .intro-text {
     text-align: center;
+  }
+}
+
+
+
+.blink-cursor::after {
+  content: '▋';
+  animation: blinkCursor 1s steps(1) infinite;
+}
+
+@keyframes blinkCursor {
+  50% {
+    opacity: 0;
   }
 }
