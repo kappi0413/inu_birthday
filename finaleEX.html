@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>EXをクリアしただと…？？</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 或世イヌ 誕生日おめでとう！🎉</h1>
+    <h1>🎉 そしてここまでたどり着いた人もおめでとうおめでとう！🎉</h1>
+
+    <p>ここまでたどり着くなんて思わなかったぜ★</p>
+
+    <div id="messages">
+      <div class="message">💛 推しは永遠！お誕生日おめでとう！</div>
+      <div class="message">🖤 これからもずっと応援してるよ！</div>
+      <div class="message">💛 最後まで解いたあなたも最高！</div>
+    </div>
+
+    <!-- SNS共有ボタン -->
+    <button id="shareBtn">📣 Xでシェアして始めよう</button>
+  <script>
+    document.getElementById("shareBtn").addEventListener("click", function () {
+      //＃変えるの忘れない
+      const text = "或世イヌの誕生日謎解き、これから挑戦してみる！✨\n#";
+      const url = encodeURIComponent(window.location.href);
+      const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`;
+      window.open(shareUrl, "_blank");
+    });
+  </script>
+  </script>
+</body>
+</html>

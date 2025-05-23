@@ -222,6 +222,10 @@ a {
   margin-top: 20px;
 }
 
+.questionEX {
+  color: #a32828;
+}
+
 /* アニメーション */
 @keyframes fadeInDown {
   from {
@@ -278,8 +282,6 @@ a {
     text-align: center;
   }
 }
-
-
 
 .blink-cursor::after {
   content: '▋';

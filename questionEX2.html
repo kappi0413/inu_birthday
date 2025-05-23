@@ -8,15 +8,15 @@
 </head>
 
 <body>
-  <!-- 第EX1問 -->
+  <!-- 第EX2問 -->
   <h1>第EX問</h1>
-  <p>或世イヌのYoutube登録者数は？</p>
+  <p>或世イヌの好きな女性像は？</p>
 
   <div class="choices">
-    <button class="choice" data-correct="true">約14万人</button><!--正解-->
-    <button class="choice" data-correct="false">約11万人</button>
-    <button class="choice" data-correct="false">約15万人</button>
-    <button class="choice" data-correct="false">約13万人</button>
+    <button class="choice" data-correct="false">金髪ギャル</button>
+    <button class="choice" data-correct="false">圧倒的妹属性</button>
+    <button class="choice" data-correct="true">黒髪ロングのメガネのおねぇさん</button><!--正解-->
+    <button class="choice" data-correct="false">ギャップのある人</button>
   </div>
 
   <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
@@ -37,7 +37,7 @@
           overlay.classList.add("active");
 
           setTimeout(() => {
-            window.location.href = "question1_EX2.html";
+            window.location.href = "questionEX3.html";
           }, 800);
         } else {
           feedback.textContent = "不正解です。もう一度選んでね。";

@@ -9,24 +9,29 @@
   <div class="container">
     <h1>🎉 或世イヌ 誕生日おめでとう！🎉</h1>
 
-    <p>ここまでたどり着くなんて！或世イヌへお祝いの言葉を！</p>
+    <p>まさかここまでたどり着くなんて！！</p>
 
-    <div id="messages">
-      <div class="message">💛 推しは永遠！お誕生日おめでとう！</div>
-      <div class="message">🖤 これからもずっと応援してるよ！</div>
-      <div class="message">💛 最後まで解いたあなたも最高！</div>
-    </div>
+<div id="messages">
+  <div class="message">💛 推しは永遠っ★☆お誕生日ほんとにおめでと〜(*´∀｀*)♪</div>
+  <div class="message">🖤 イヌくんずっと応援してるよぉ〜✨がんばってねっ！！</div>
+  <div class="message">💛 ここまで解けたとかヤバいっ!! あなたマジ天才<br>＼(^o^)／</div>
+  <div class="message">🖤 解き終わったらXで足跡残していってね</div>
+</div>
 
+    <p style="margin-top: 30px;">
+      <a href="questionEX1.html" style="color: #222222; text-decoration: none;">EX問題に挑戦してみる？</a>
+    </p>
     <!-- SNS共有ボタン -->
-    <button id="shareBtn">📣 Xでシェアして始めよう</button>
+    <button id="shareBtn">📣 Xでシェアして足跡を残そう</button>
   <script>
     document.getElementById("shareBtn").addEventListener("click", function () {
-      const text = "或世イヌの誕生日謎解き、これから挑戦してみる！✨\n#或世イヌ誕生日";
+      //＃変えるの忘れない
+      const text = "🐾✉或世イヌの誕生日謎解きHP、これから挑戦してみる！✨\n#";
       const url = encodeURIComponent(window.location.href);
       const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`;
       window.open(shareUrl, "_blank");
     });
-  </script>
+
   </script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>第EX問</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 第EX3問 -->
+  <h1>第EX問</h1>
+  <p>【第2回】ネオポルテ学力テスト【NeoPorte】の英語の問題で、「scissors」を或世はなんて答えたでしょう</p>
+
+  <div class="choices">
+    <button class="choice" data-correct="true">なにかのソース</button><!--正解-->
+    <button class="choice" data-correct="false">スシソース</button>
+    <button class="choice" data-correct="false">すしそーす</button>
+    <button class="choice" data-correct="false">しょうゆ</button>
+  </div>
+
+  <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
+  <div id="fadeout-overlay"></div>
+
+  <!--成否判定-->
+  <script>
+    document.querySelectorAll(".choice").forEach(button => {
+      button.addEventListener("click", () => {
+        const correct = button.getAttribute("data-correct") === "true";
+        const feedback = document.getElementById("feedback");
+
+        if (correct) {
+          feedback.textContent = "正解です！次の問題へ進みます。";
+          feedback.classList.remove("hidden");
+
+          const overlay = document.getElementById("fadeout-overlay");
+          overlay.classList.add("active");
+
+          setTimeout(() => {
+            window.location.href = "finaleEX.html";
+          }, 800);
+        } else {
+          feedback.textContent = "不正解です。もう一度選んでね。";
+          feedback.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
