@@ -22,16 +22,18 @@
       <a href="questionEX1.html" style="color: #222222; text-decoration: none;">EX問題に挑戦してみる？</a>
     </p>
     <!-- SNS共有ボタン -->
-    <button id="shareBtn">📣 Xでシェアして足跡を残そう</button>
+    <button id="shareBtn">📣 Xでシェアして足跡を残してね</button>
   <script>
     document.getElementById("shareBtn").addEventListener("click", function () {
       //＃変えるの忘れない
-      const text = "🐾✉或世イヌの誕生日謎解きHP、これから挑戦してみる！✨\n#";
+      const text = "🐾✉或世イヌの誕生日謎解きHP、ここから挑戦してみる？✨\n#";
       const url = encodeURIComponent(window.location.href);
       const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`;
       window.open(shareUrl, "_blank");
     });
-
   </script>
+  <footer style="margin-top: 60px; font-size: 0.8em; color: #777; text-align: center;">
+    協力してくれた方々：かっぴー、モリアーティーさん、非公式或世イヌ鯖さん、そしてあなた！
+  </footer>
 </body>
 </html>

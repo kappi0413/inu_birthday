@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <h1>🎉 或世イヌ 誕生日おめでとう！🎉</h1>
-    <h1>🎉 そしてここまでたどり着いた人もおめでとうおめでとう！🎉</h1>
+    <h1>🎉 そしてここまでたどり着いた人もおめでとう！🎉</h1>
 
     <p>ここまでたどり着くなんて思わなかったぜ★</p>
 
@@ -19,16 +19,18 @@
     </div>
 
     <!-- SNS共有ボタン -->
-    <button id="shareBtn">📣 Xでシェアして始めよう</button>
+    <button id="shareBtn">📣 Xでシェアして足跡を残してね</button>
   <script>
     document.getElementById("shareBtn").addEventListener("click", function () {
       //＃変えるの忘れない
-      const text = "或世イヌの誕生日謎解き、これから挑戦してみる！✨\n#";
+      const text = "或世イヌの誕生日謎解きHP、これから挑戦してみる？✨\n#";
       const url = encodeURIComponent(window.location.href);
       const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`;
       window.open(shareUrl, "_blank");
     });
   </script>
-  </script>
+  <footer style="margin-top: 60px; font-size: 0.8em; color: #777; text-align: center;">
+    協力してくれた方々：かっぴー、モリアーティーさん、非公式或世イヌ鯖の皆さん、そしてあなた！
+  </footer>
 </body>
 </html>
