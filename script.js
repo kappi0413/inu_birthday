@@ -6,7 +6,7 @@ if (startBtn) {
     overlay.classList.add("active");
     setTimeout(() => {
       location.href = "question1.html";
-    }, 800);
+    }, 2000);
   });
 }
 
