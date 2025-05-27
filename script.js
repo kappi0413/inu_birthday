@@ -113,7 +113,7 @@ if (typeSelect) {
       }
 
       if (num === "五" && type === "萬") {
-        feedback.textContent = "正解です！次の問題へ進みます。";
+        feedback.textContent = "正解です！次の問題へ進みます。(*‘ω‘ *)";
         feedback.className = "feedback-correct";
         feedback.classList.remove("hidden");
 
@@ -124,7 +124,7 @@ if (typeSelect) {
           window.location.href = "question4.html";
         }, 800);
       } else {
-        feedback.textContent = "ちがうよ！もう一度考えてみて！";
+        feedback.textContent = "ぶぶ～！不正解です( ;∀;)";
         feedback.className = "feedback-wrong";
         feedback.classList.remove("hidden");
       }
