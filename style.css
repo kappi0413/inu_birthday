@@ -23,7 +23,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  color: #ff69b4;
+  color: #e0dd13;
   animation: blink 1s step-start infinite, fadeInDown 1s ease-out;
 }
 
