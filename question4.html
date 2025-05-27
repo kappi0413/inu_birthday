@@ -41,11 +41,11 @@
         if (id === "r99" || id === "peacekeeper") {
           if (!correctAnswers[id]) {
             correctAnswers[id] = true;
-            feedback.textContent = `「${button.textContent}」 正解！`;
+            feedback.textContent = `「${button.textContent}」 正解だぜ★`;
             feedback.className = "feedback-correct";
             feedback.classList.remove("hidden");
           } else {
-            feedback.textContent = `「${button.textContent}」 はもう選ばれています。`;
+            feedback.textContent = `「${button.textContent}」 はもう選ばれているぜ★`;
             feedback.className = "feedback-warn";
             feedback.classList.remove("hidden");
           }
@@ -64,7 +64,7 @@
           correctAnswers.r99 = false;
           correctAnswers.peacekeeper = false;
 
-          feedback.textContent = `「${button.textContent}」 は不正解！！正解リセット！`;
+          feedback.textContent = `「${button.textContent}」 は不正解～！！正解リセットしちゃうよ～ん！`;
           feedback.className = "feedback-wrong";
           feedback.classList.remove("hidden");
         }

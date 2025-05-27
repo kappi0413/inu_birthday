@@ -21,7 +21,7 @@
     <button class="choice" data-correct="false">2220カロリー</button>
   </div>
 
-  <div id="feedback" class="hidden">正解です！次の問題へ進みます。</div>
+  <div id="feedback" class="hidden">正解です！次の問題へ進みます。!(^^)!</div>
   <div id="fadeout-overlay"></div>
 
   <!--成否判定を行う-->
@@ -32,7 +32,7 @@
         const feedback = document.getElementById("feedback");
 
         if (correct) {
-          feedback.textContent = "正解です！次の問題へ進みます。";
+          feedback.textContent = "正解です！次の問題へ進みます。!(^^)!";
           feedback.classList.remove("hidden");
 
           const overlay = document.getElementById("fadeout-overlay");
@@ -42,7 +42,7 @@
             window.location.href = "question3.html"; // 次の問題へ
           }, 2000);
         } else {
-          feedback.textContent = "不正解です。もう一度選んでね。";
+          feedback.textContent = "ぶぶ～！不正解です( ;∀;)";
           feedback.classList.remove("hidden");
         }
       });

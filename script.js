@@ -46,7 +46,7 @@ document.querySelectorAll(".choice").forEach(button => {
     const feedback = document.getElementById("feedback");
 
     if (correct) {
-      feedback.textContent = "正解です！次の問題へ進みます。";
+      feedback.textContent = "正解です！次の問題へ進みます。!(^^)!";
       feedback.className = "feedback-correct";
       feedback.classList.remove("hidden");
 
@@ -62,7 +62,7 @@ document.querySelectorAll(".choice").forEach(button => {
         window.location.href = nextPage;
       }, 800);
     } else {
-      feedback.textContent = "不正解です。もう一度選んでね。";
+      feedback.textContent = "ぶぶ～！不正解です( ;∀;)";
       feedback.className = "feedback-wrong";
       feedback.classList.remove("hidden");
     }
@@ -106,14 +106,14 @@ if (typeSelect) {
       const feedback = document.getElementById("feedback");
 
       if (!num || !type) {
-        feedback.textContent = "両方選んでね！";
+        feedback.textContent = "両方選んでね★";
         feedback.className = "feedback-wrong";
         feedback.classList.remove("hidden");
         return;
       }
 
       if (num === "五" && type === "萬") {
-        feedback.textContent = "正解です！次の問題へ進みます。(*‘ω‘ *)";
+        feedback.textContent = "正解です！次の問題へ進みます。!(^^)!";
         feedback.className = "feedback-correct";
         feedback.classList.remove("hidden");
 
@@ -151,7 +151,7 @@ if (isQ4) {
           feedback.textContent = `「${button.textContent}」 正解！`;
           feedback.className = "feedback-correct";
         } else {
-          feedback.textContent = `「${button.textContent}」 はもう選ばれています。`;
+          feedback.textContent = `「${button.textContent}」 はもう選ばれているぜ★`;
           feedback.className = "feedback-warn";
         }
         feedback.classList.remove("hidden");
@@ -165,7 +165,7 @@ if (isQ4) {
         }
       } else {
         correctAnswers = { r99: false, peacekeeper: false };
-        feedback.textContent = `「${button.textContent}」 は不正解！！正解リセット！`;
+        feedback.textContent = `「${button.textContent}」 は不正解～！！正解リセットしちゃうよ～ん！`;
         feedback.className = "feedback-wrong";
         feedback.classList.remove("hidden");
       }
